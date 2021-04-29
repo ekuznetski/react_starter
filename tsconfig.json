@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "paths": {
+      "@components": ["components"],
+      "@domain": ["domain"],
+      "@store": ["store"],
+      "@utils": ["utils"]
+    }
+  },
+  "include": ["*.tsx", "src/**/*.tsx", "**/*.js", "**/*.ts", ".eslintrc.js", "/src/utils/jest-setup.ts"],
+  "exclude": ["node_modules"]
+}
