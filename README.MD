@@ -14,8 +14,15 @@ Contain:
 - eslint (airbnb with some modifications)
 
 Components: 
-- notifications 
-- modals
+- notification
+- modal
+- svg - inline svg
+- img
+- icon - svg from sprite
+~~- localLoader~~
+- loader
+
+storybook
 
 Services: 
 - api
@@ -24,3 +31,4 @@ Services:
 должна быть поддержка:  
 переменных окружения 
 ssr 
+svg - https://codesandbox.io/s/react-dynamic-svg-import-ts-kzx7n?fontsize=14&hidenavigation=1&module=/src/App.tsx&theme=dark&file=/src/App.tsx:2318-2329 динамическая загрузка svg

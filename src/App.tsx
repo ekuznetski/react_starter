@@ -1,12 +1,14 @@
 import React from "react";
 import { hot } from "react-hot-loader/root";
 import "./styles.scss";
-import { Svg } from "./Svg";
+import { Icon, Img, Svg } from "@components";
 
 function App() {
   return (
     <div>
-      <Svg />
+      <Img name="test.jpeg" />
+      <Icon name="home" />
+      <Svg href="test.svg" />
     </div>
   );
 }

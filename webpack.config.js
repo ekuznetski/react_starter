@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const CopyPlugin = require("copy-webpack-plugin");
 const { paths: cp } = require("./tsconfig.json").compilerOptions;
 
 const paths = Object.keys(cp).reduce((acc, e) => {
@@ -25,7 +25,7 @@ module.exports = (args) => ({
       ...paths,
     },
   },
-  devtool: args.mode === "development" ? "inline-source-map" : "source-map",
+  devtool: args.mode === "production" ? "source-map" : "inline-source-map",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].[contenthash].bundle.js",
@@ -53,6 +53,10 @@ module.exports = (args) => ({
                   removeUselessStrokeAndFill: false,
                   removeViewBox: false,
                   prefixIds: false,
+                  reusePaths: true,
+                  removeOffCanvasPaths: true,
+                  removeStyleElement: true,
+                  removeScriptElement: true,
                 },
               },
             },
@@ -78,6 +82,9 @@ module.exports = (args) => ({
     ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [{ from: "src/assets", to: "assets" }],
+    }),
     new CaseSensitivePathsPlugin(),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin({
@@ -91,7 +98,7 @@ module.exports = (args) => ({
     open: false,
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    hot: args.mode === "development",
+    hot: args.mode !== "production",
     port: 3000,
     watchContentBase: false,
     progress: false,
