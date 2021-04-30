@@ -88,7 +88,7 @@ module.exports = (args) => ({
     }),
   ],
   devServer: {
-    open: true,
+    open: false,
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     hot: args.mode === "development",
