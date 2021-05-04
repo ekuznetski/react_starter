@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "fkill :3000 -f -s && webpack serve --mode=production",
+    "devLikeProd": "fkill :3000 -f -s && webpack serve --mode=production",
     "dev": "fkill :3000 -f -s && webpack serve --hot",
     "build": "webpack --mode=production",
     "test": "jest",

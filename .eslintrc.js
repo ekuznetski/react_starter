@@ -26,6 +26,8 @@ module.exports = {
   rules: {
     "react/jsx-props-no-spreading": "off",
     "consistent-return": "off",
+    // "@typescript-eslint/explicit-function-return-type": ["warn"],
+    "func-names": ["warn", "always", { generators: "never" }],
     "import/prefer-default-export": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/interactive-supports-focus": "off",
